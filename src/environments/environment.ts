@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+// You have to switch this, when your real back-end is done
+	api_url:"https://reqres.in/api/",
+	authTokenKey: 'jwtToken',
+
 };
 
 /*

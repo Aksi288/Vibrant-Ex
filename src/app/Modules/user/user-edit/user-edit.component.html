@@ -1,0 +1,31 @@
+<div  class="row" style="
+display: flow-root;
+margin-bottom: 30px;
+">
+<div style="display: inline-block;float: left;" >
+    <h3   [innerHTML]="text"></h3>
+</div>
+<div *ngIf="isViewMode"   style="display: inline-block; float: right;">
+
+    <a  routerLink="/user/user-list"  class="btn btn-secondary " mat-raised-button
+    matTooltip="Back to the users list">
+    <span >Back</span>
+</a>    
+</div>
+</div>
+   <div class="row">
+    <user-form #userFormRef   (whenSubmitClicked)="whenSubmitClicked($event)"
+    [isViewMode]="isViewMode" [mode]="'edit'" [userData]="userData" >
+    <ng-container *ngIf="!isViewMode">
+      <button type="submit"    
+      [disabled]="!userFormRef.userForm.valid" 
+      class="btn blue btn-lg"
+       style="background-color: #43A047;color: white;margin-right: 12px;">
+      Update
+    </button>
+    </ng-container>
+  
+    </user-form>
+   </div>
+ 
+ 

@@ -1,0 +1,78 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+
+
+    <div class="row">
+
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="Username" formControlName="name">
+      </mat-form-field>
+
+
+      <!-- Received Date Column -->
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" placeholder="First Name" formControlName="first_name" required>
+        <mat-error *ngIf="firstnamecontrol.touched && firstnamecontrol.invalid">
+          First  Name is required.
+      </mat-error>
+      </mat-form-field>
+
+
+      <!-- sample PO# Column -->
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Last Name</mat-label>
+      
+        <input matInput type="text" placeholder="Last Name" formControlName="last_name" required>
+        <mat-error *ngIf="lastnamecontrol.touched && lastnamecontrol.invalid">
+          Last Name is required.
+      </mat-error>
+      </mat-form-field>
+
+      <!-- Sample Type Column -->
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="emailcontrol.touched && emailcontrol.invalid">
+          Email is required.
+      </mat-error>
+      </mat-form-field>
+
+
+   
+
+      <!-- Report Status Column -->
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" placeholder="Phone Number" formControlName="phone">
+      </mat-form-field>
+
+
+      <!-- Sample ID Column -->
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Pincode</mat-label>
+        <input matInput type="text" placeholder="Pincode" formControlName="pincode">
+      </mat-form-field>
+
+
+      <!-- Belongs to Column -->
+      <mat-form-field class="col-6" appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Address" formControlName="address" ></textarea>                                        
+     
+      </mat-form-field>
+
+
+    </div>
+    
+
+   
+
+
+  <div class="modal-footer">
+    <ng-content selector=".submit-button"></ng-content>
+    <div *ngIf="!isViewMode"(click)="onCancel()"class="btn blue btn-lg" style="margin-left: 10px;background-color: #b9b3b3;color: white;">
+      Cancel
+    </div>
+  </div>
+</form>
